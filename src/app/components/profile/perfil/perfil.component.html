@@ -1,0 +1,15 @@
+<div class="center">
+  <div class="profile-image"></div>
+  <mat-card appearance="outlined">
+    <mat-card-content class="center" style="height: 150px;">
+      @if (usuario) {
+        <span>Nome: {{usuario.nome}}</span>
+        <span>Email: {{usuario.email}}</span>
+        <span>Total Mensal Reciclado: {{usuario.totalMensal}} kg</span>
+        <span>Pontos do Mês: {{usuario.pontosMes}}</span>
+      } @else {
+        <span>Usuário não identificado</span>
+      }
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,27 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: solid 2px #64489A;
+  background-color: #fff;
+  background-image: url('../../../../assets/profile.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: -50px; // This will make it overlap
+  z-index: 1; // This ensures the image stays on top
+}
+
+mat-card {
+  width: 400px;
+  height: 300px;
+  padding-top: 50px; // Add padding to accommodate the overlapping image
+  background-color: rgba(120, 200, 80, 0.6);
+
+}

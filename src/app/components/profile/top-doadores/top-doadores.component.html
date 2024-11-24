@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=compost" />
+
+<mat-tab-group dynamicHeight>
+  <!-- Tab Reciclagem -->
+  <mat-tab label="Reciclagem">
+    <div class="large-box">
+      <mat-card appearance="outlined" style="padding: 16px;">
+        <mat-card-content class="reciclagem-content">
+          <mat-list>
+            <div mat-subheader>Reciclagem total mensal</div>
+            <mat-list-item>
+              <mat-icon matListItemIcon style="margin-left: 35%; color: #5078E7;">compost</mat-icon>
+              <div matListItemTitle>{{ totalMensal.toFixed(3) }} kg</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Registre o peso de sua reciclagem</div>
+            <mat-list-item>
+              <div class="example-container">
+                <mat-form-field class="width-input">
+                  <input matInput 
+                        type="number" 
+                        [(ngModel)]="pesoReciclagem" 
+                        placeholder="Peso em kg"
+                        min="0"
+                        step="0.050">
+                </mat-form-field>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="footer">
+            <button mat-raised-button color="primary" (click)="registrarReciclagem()">Registrar</button>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </mat-tab>
+
+  <!-- Tab Doadores -->
+  <mat-tab label="Top Doadores">
+    <div class="large-box">
+      <mat-card appearance="outlined" style="padding: 16px;">
+        <mat-card-content>
+          <mat-list>
+            <mat-list-item *ngFor="let doador of topDoadores; let i = index">
+              <span matListItemTitle>{{ i + 1 }}. {{ doador.nomeUsuario }}</span>
+              <span matListItemLine>{{ doador.total.toFixed(2) }} kg</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+
+

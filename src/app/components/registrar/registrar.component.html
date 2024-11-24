@@ -1,0 +1,57 @@
+<mat-grid-list cols="1" rowHeight="100%">
+  <mat-grid-tile>
+    <mat-card appearance="outlined" style="padding: 16px;">
+      <mat-card-header style="margin-bottom: 8px;">
+        <mat-card-title>Registre-se</mat-card-title>
+      </mat-card-header>
+
+      <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <mat-card-content>
+        <div class="example-container">
+          <mat-form-field class="width-input">
+            <mat-label>Digite seu nome</mat-label>
+            <input matInput formControlName="nome">
+            @if (registroForm.get('nome')?.errors?.['required'] && registroForm.get('nome')?.touched) {
+              <mat-error>Nome é obrigatório</mat-error>
+            }
+          </mat-form-field>
+        </div>
+
+        <div class="example-container">
+          <mat-form-field class="width-input">
+            <mat-label>Digite seu email</mat-label>
+            <input matInput formControlName="email" type="email">
+            @if (registroForm.get('email')?.invalid && registroForm.get('email')?.touched) {
+              <mat-error>{{errorMessage()}}</mat-error>
+            }
+          </mat-form-field>
+        </div>
+        
+        <div class="example-container">
+          <mat-form-field class="width-input">
+            <mat-label>Digite sua senha</mat-label>
+            <input matInput [type]="hide() ? 'password' : 'text'" formControlName="senha">
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility($event)" type="button">
+              <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            @if (registroForm.get('senha')?.errors?.['required'] && registroForm.get('senha')?.touched) {
+              <mat-error>Senha é obrigatória</mat-error>
+            }
+            @if (registroForm.get('senha')?.errors?.['minlength']) {
+              <mat-error>A senha deve ter no mínimo 6 caracteres</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-footer>
+        <div class="footer">
+          <button mat-raised-button color="primary" type="submit" [disabled]="registroForm.invalid || isLoading()">
+            {{isLoading() ? 'Registrando...' : 'Registrar'}}
+          </button>
+        </div>
+      </mat-card-footer>
+    </form>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

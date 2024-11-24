@@ -1,0 +1,51 @@
+mat-card {
+  background-color: rgba(120, 200, 80, 0.6);
+}
+
+.mat-mdc-card-content {
+  padding: 0;
+}
+
+.mat-mdc-card-title, .mdc-list-item__primary-text {
+  color: #5078E7;
+  font-weight: 500;
+}
+
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: #673ab7;
+  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-header-pagination-icon-color: black;
+  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-label-text-color: #673ab7;
+  --mat-tab-header-active-ripple-color: #673ab7;
+  --mat-tab-header-inactive-ripple-color: #673ab7;
+  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-focus-label-text-color: #673ab7;
+  --mat-tab-header-active-hover-label-text-color: #673ab7;
+  --mat-tab-header-active-focus-indicator-color: #673ab7;
+  --mat-tab-header-active-hover-indicator-color: #673ab7;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.width-input {
+  width: 250px;
+}
+
+.footer, .reciclagem-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
