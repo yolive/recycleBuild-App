@@ -5,7 +5,6 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --configuration production --base-href /recycleBuild-App/ && npx gh-pages -d dist/recycle-build-app-frontend",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
