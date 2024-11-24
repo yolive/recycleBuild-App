@@ -14,5 +14,5 @@ import { RegistrarComponent } from './components/registrar/registrar.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'RecycleBuild-app-frontend';
+  title = 'recycle-build-app-frontend';
 }

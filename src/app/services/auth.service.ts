@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { AuthResponse } from '../models/authResponse.model';
 import { RegistroUsuario } from '../models/registro.model';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private readonly http = inject(HttpClient);
-  private apiUrl = 'https://localhost:7218/Auth';
+  private apiUrl = `${environment.apiUrl}/Auth`;
 
   private readonly isAuthenticatedSubject = new BehaviorSubject<boolean>(this.hasValidToken());
   readonly isAuthenticated$ = this.isAuthenticatedSubject.asObservable();

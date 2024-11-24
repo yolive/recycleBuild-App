@@ -5,13 +5,15 @@ import { AuthService } from './auth.service';
 import { PerfilUsuario } from '../models/perfilUsuario.model';
 import { TopDoadores } from '../models/topDoadores.model';
 import { LixoReciclado } from '../models/lixoReciclado.model';
+import { environment } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReciclagemService {
 
-  private apiUrl = 'https://localhost:7218/Reciclagem';
+  private apiUrl = `${environment.apiUrl}/Reciclagem`;
+  // private apiUrl = 'https://localhost:7218/Reciclagem';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
